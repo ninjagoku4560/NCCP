@@ -58,7 +58,7 @@ def requests(commande):
            r = requests.options(url)
        else:
            print("Request type not supported or non-existent")
-   except:
+    except:
        print("Error")
 
 
