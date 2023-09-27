@@ -1,6 +1,6 @@
 import requests,function
   
-commandeDispo = ["help","requests","exit"] 
+commandeDispo = ["help","requests","exit","options"] 
 commandeDescription =["","send request by using requests library","leave"] 
   
 print("MIT License")

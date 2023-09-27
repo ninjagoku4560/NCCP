@@ -1,10 +1,14 @@
 import os
 
 
-commandeDispo = ["help","requests","exit"]
-commandeDescription =["","send request by using requests library.","leave"] 
-faconcommande = ["","requests (enter type of request) (enter url) (if type is get put here what you want to display)",""]
-nbrCommande = 3
+
+
+commandeDispo = ["help","requests","exit","options"]
+commandeDescription =["","send request by using requests library.","leave",""] 
+faconcommande = ["","requests (enter type of request) (enter url) (if type is get put here what you want to display)","","options lang set/show en_us/fr_fr"]
+nbrCommande = 4
+
+language = "en_us"
 
 def findCommand(input):
     commande = input.split(" ")
@@ -70,3 +74,33 @@ def exit():
     
 def math(calcul):
     return int(calcul)
+
+
+def options(Input):
+    command = Input.split(" ")
+    option = command[1]
+    modif = command[2]
+    try:
+        newValue = command[3]
+    except:
+        newValue = None
+    
+    if option == "lang":
+        if modif == "show":
+            if language == "en_us":
+                print("The langage is ", language)
+            elif language == "fr_fr":
+                print("La langue est ",language)
+        elif modif == "set":
+            try:
+                if newValue == "en_us" or newValue == "fr_fr":
+                    language = newValue
+                else:
+                    if language == "en_us":
+                        print("Unknown or unimplanted language")
+                    elif language == "fr_fr":
+                        print("Langue inconnue ou non implanté")
+            except:
+                print("error")
+                        
+    
