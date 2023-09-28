@@ -20,7 +20,10 @@ def findCommand(input):
             return i
             break
         elif nbrCommande == i:
-            print("Command not found")
+            if language == "en_us":
+                print("Command not found")
+            elif language == "fr_fr":
+                print("Commande non trouvé")
             break
         else:
             i=+1
@@ -61,14 +64,20 @@ def requests(commande):
        elif type == "options":
            r = requests.options(url)
        else:
-           print("Request type not supported or non-existent")
+           if language == "en_us":
+               print("Request type not supported or non-existent")
+           elif language == "fr_fr":
+               print("Le type de requête est non fonctionnel ou non existante")
     except:
        print("Error")
 
 
 
 def exit():
-    print("Good bye")
+    if language == "en_us":
+      print("Good bye")
+    elif language == "fr_fr":
+        print("Au revoir")
 
     
     
@@ -99,8 +108,8 @@ def options(Input):
                     if language == "en_us":
                         print("Unknown or unimplanted language")
                     elif language == "fr_fr":
-                        print("Langue inconnue ou non implant�")
+                        print("Langue inconnue ou non implanté")
             except:
-                print("error")
+                print("Error")
                         
     
